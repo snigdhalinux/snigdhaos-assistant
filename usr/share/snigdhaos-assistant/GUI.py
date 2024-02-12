@@ -16,12 +16,12 @@ username = getpass.getuser()
 if DEBUG:
     user = username
 else:
-    user = "liveuser"
+    user = "eshan"
 
-Settings = home + "/.config/snigdha-welcome/settings.conf"
-Skel_Settings = "/etc/skel/.config/snigdha-welcome/settings.conf"
-dot_desktop = "/usr/share/applications/snigdha-welcome.desktop"
-autostart = home + "/.config/autostart/snigdha-welcome.desktop"
+Settings = home + "/.config/snigdhaos-assistant/settings.conf"
+Skel_Settings = "/etc/skel/.config/snigdhaos-assistant/settings.conf"
+dot_desktop = "/usr/share/applications/snigdhaos-assistant.desktop"
+autostart = home + "/.config/autostart/snigdhaos-assistant.desktop"
 
 
 # check if path exists
