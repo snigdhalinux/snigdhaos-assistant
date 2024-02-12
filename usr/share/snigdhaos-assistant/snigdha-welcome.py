@@ -25,14 +25,14 @@ REMOTE_SERVER = "www.google.com"
 
 class Main(Gtk.Window):
     def __init__(self):
-        super(Main, self).__init__(title="Snigdha Welcome")
+        super(Main, self).__init__(title="Snigdha OS Assistant [ARCTIC]")
         self.set_border_width(10)
         self.set_default_size(860, 250)
         self.set_icon_from_file(os.path.join(GUI.base_dir, "images/snigdhaos-assistant.svg"))
         self.set_position(Gtk.WindowPosition.CENTER)
         self.results = ""
         if not os.path.exists(GUI.home + "/.config/snigdhaos-assistant/"):
-            os.mkdir(GUI.home + "/.config/snigdha-welcome/")
+            os.mkdir(GUI.home + "/.config/snigdhaos-assistant/")
             with open(GUI.Settings, "w") as f:
                 f.write("autostart=True")
                 f.close()
