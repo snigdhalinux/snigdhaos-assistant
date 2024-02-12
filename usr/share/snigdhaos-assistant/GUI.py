@@ -48,8 +48,8 @@ def GUI(self, Gtk, GdkPixbuf):
     hbox8 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox9 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
-    # vbox1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-    # vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+    vbox1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+    vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
 
     infoE = Gtk.EventBox()
     pbinfo = GdkPixbuf.Pixbuf().new_from_file_at_size(
@@ -283,10 +283,10 @@ def GUI(self, Gtk, GdkPixbuf):
     hbox2.pack_start(button7, True, True, 0)
     hbox2.pack_start(button70, True, True, 0)
 
-    # button8 = Gtk.Button(label="")
-    # button8_label = button8.get_child()
-    # button8_label.set_markup("<b>Donate</b>")
-    # button8.connect("clicked", self.on_link_clicked, "https://arcolinux.info/donation/")
+    button8 = Gtk.Button(label="")
+    button8_label = button8.get_child()
+    button8_label.set_markup("Merchandise")
+    button8.connect("clicked", self.on_link_clicked, "https://snigdhaos.org/merchandise/")
 
     button9 = Gtk.Button(label="Become Beta Tester")
     button9.connect(
@@ -310,9 +310,9 @@ def GUI(self, Gtk, GdkPixbuf):
     button12 = Gtk.Button(label="Quit")
     button12.set_size_request(200, 50)
     button12.connect("clicked", Gtk.main_quit)
-    # button12.set_tooltip_markup("Quit the ArcoLinux Welcome App")
+    button12.set_tooltip_markup("Exit Snigdha OS Assistant?")
 
-    # hbox5.pack_start(button8, True, True, 0)
+    hbox5.pack_start(button8, True, True, 0)
     hbox5.pack_start(button9, True, True, 0)
     hbox5.pack_start(button10, True, True, 0)
     # hbox5.pack_start(button11, True, True, 0)
