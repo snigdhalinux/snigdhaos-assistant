@@ -16,7 +16,7 @@ username = getpass.getuser()
 if DEBUG:
     user = username
 else:
-    user = "eshan"
+    user = "liveuser"
 
 Settings = home + "/.config/snigdhaos-assistant/settings.conf"
 Skel_Settings = "/etc/skel/.config/snigdhaos-assistant/settings.conf"
@@ -169,33 +169,33 @@ def GUI(self, Gtk, GdkPixbuf):
     # self.buttonatt.connect("clicked", self.on_buttonatt_clicked)
     # self.buttonatt.set_size_request(420, 60)
 
-    self.button_sofi = Gtk.Button(label="")
-    button_sofi_label = self.button_sofi.get_child()
-    button_sofi_label.set_markup("<span size='large'><b>Snigdha App Installer</b></span>")
-    self.button_sofi.connect("clicked", self.on_button_sofi_clicked)
-    self.button_sofi.set_size_request(420, 70)
+    # self.button_sofi = Gtk.Button(label="")
+    # button_sofi_label = self.button_sofi.get_child()
+    # button_sofi_label.set_markup("<span size='large'><b>Snigdha App Installer</b></span>")
+    # self.button_sofi.connect("clicked", self.on_button_sofi_clicked)
+    # self.button_sofi.set_size_request(420, 70)
 
     # grid.add(button1)
-    if username == user:
-        grid = Gtk.Grid()
-        grid.attach(self.button8, 2, 0, 2, 2)
-        # grid.attach(button13, 2, 0, 2, 2)
-        grid.attach(button1, 2, 2, 2, 2)
-        if file_check("/sys/firmware/efi/fw_platform_size"):
-            grid.attach(buttongrub, 1, 4, 2, 2)
-            grid.attach(buttonsystemboot, 3, 4, 2, 2)
-        grid.attach(button2, 1, 6, 2, 2)
-        grid.attach(buttonca, 3, 6, 2, 2)
-        grid.set_column_homogeneous(True)
-        grid.set_row_homogeneous(True)
-    else:
-        grid = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        self.button8.set_size_request(300, 70)
-        # self.buttonatt.set_size_request(300, 70)
-        self.button_sofi.set_size_request(300, 70)
-        grid.pack_start(self.button_sofi, True, False, 0)
-        # grid.pack_start(self.buttonatt, True, False, 0)
-        grid.pack_start(self.button8, True, False, 0)
+    # if username == user:
+    #     grid = Gtk.Grid()
+    #     grid.attach(self.button8, 2, 0, 2, 2)
+    #     # grid.attach(button13, 2, 0, 2, 2)
+    #     grid.attach(button1, 2, 2, 2, 2)
+    #     if file_check("/sys/firmware/efi/fw_platform_size"):
+    #         grid.attach(buttongrub, 1, 4, 2, 2)
+    #         grid.attach(buttonsystemboot, 3, 4, 2, 2)
+    #     grid.attach(button2, 1, 6, 2, 2)
+    #     grid.attach(buttonca, 3, 6, 2, 2)
+    #     grid.set_column_homogeneous(True)
+    #     grid.set_row_homogeneous(True)
+    # else:
+    #     grid = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+    #     self.button8.set_size_request(300, 70)
+    #     # self.buttonatt.set_size_request(300, 70)
+    #     self.button_sofi.set_size_request(300, 70)
+    #     grid.pack_start(self.button_sofi, True, False, 0)
+    #     # grid.pack_start(self.buttonatt, True, False, 0)
+    #     grid.pack_start(self.button8, True, False, 0)
     # grid.set_row_homogeneous(True)
 
     # ======================================================================
@@ -295,7 +295,7 @@ def GUI(self, Gtk, GdkPixbuf):
         "https://snigdhaos.org/",
     )
 
-    button10 = Gtk.Button(label="Snigdha Develop")
+    button10 = Gtk.Button(label="Develop Snigdha OS")
     button10.connect(
         "clicked",
         self.on_link_clicked,
@@ -489,21 +489,21 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
     #                   Start Arcolinux Tweak Tool
     # ======================================================================
-    launchBox = Gtk.EventBox()
-    pblaunch = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/archlinux-tweak-tool.svg"), 40, 40
-    )
-    launchimage = Gtk.Image().new_from_pixbuf(pblaunch)
+    # launchBox = Gtk.EventBox()
+    # pblaunch = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/archlinux-tweak-tool.svg"), 40, 40
+    # )
+    # launchimage = Gtk.Image().new_from_pixbuf(pblaunch)
 
-    launchBox.add(launchimage)
-    launchBox.connect("button_press_event", self.on_launch_clicked, "")
+    # launchBox.add(launchimage)
+    # launchBox.connect("button_press_event", self.on_launch_clicked, "")
 
-    launchBox.set_property("has-tooltip", True)
-    launchBox.connect(
-        "query-tooltip", self.tooltip_callback, "Launch Arcolinux Tweak Tool"
-    )
+    # launchBox.set_property("has-tooltip", True)
+    # launchBox.connect(
+    #     "query-tooltip", self.tooltip_callback, "Launch Arcolinux Tweak Tool"
+    # )
 
-    hbox6.pack_start(launchBox, False, False, 0)
+    # hbox6.pack_start(launchBox, False, False, 0)
     # hbox6.pack_start(infoE, False, False, 0)
     # ======================================================================
     #                   PACK TO WINDOW
@@ -517,7 +517,7 @@ def GUI(self, Gtk, GdkPixbuf):
     self.vbox.pack_start(hbox4, False, False, 7)  # welcome Label
     self.vbox.pack_start(hbox8, False, False, 7)  # warning Label
 
-    self.vbox.pack_start(grid, True, False, 7)  # Run GParted/Calamares
+    # self.vbox.pack_start(grid, True, False, 7)  # Run GParted/Calamares
 
     # if self.results and self.is_connected():
     #     self.vbox.pack_start(self.vbox2, False, False, 0)  # Notice
